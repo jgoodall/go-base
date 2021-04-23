@@ -6,6 +6,7 @@ Clone this repository, then update `app-name` and `author-name` in the `main.go`
 rm -rf .git
 git init
 go mod init <module-path>
+go mod tidy
 make
 ```
 

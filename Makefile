@@ -1,5 +1,10 @@
 -include .env
 
+# If you need a private server, use like below.
+# GO ?= GOPRIVATE=code.server.name/* go
+GO ?= go
+
+# If your main git branch is `master`, change this.
 GIT_MAIN_BRANCH := main
 
 GOBUILD  := $(GO) build
@@ -45,7 +50,7 @@ linux: vet lint $(BIN_DIR)/$(PROJECT)-linux-$(GOARCH)
 .PHONY: vet
 vet:
 	$(info >  Checking if there are issues reported by go vet...)
-	@$(GO) vet -composites=false ./...
+	$(GO) vet -composites=false ./...
 
 ## `make lint`: Run golangci-lint to see if there are any issues.
 # https://github.com/golangci/golangci-lint
