@@ -1,0 +1,14 @@
+# [Leaf](https://github.com/vrongmeal/leaf) configuration file to
+# watches for changes and rebuild. Install:
+# go get -u github.com/vrongmeal/leaf/cmd/leaf
+# To start watching files, run: leaf
+
+# Commands to be executed. These are run in the provided order.
+exec:
+  - make
+
+# Stop the command chain when an error occurs
+exit_on_err: true
+
+# Delay after which commands are executed.
+delay: 500ms
